@@ -16,7 +16,7 @@ The structure is defined in the JSON format, and supports the following keys:
 - (optional) `tip`: Small text for the user to describe the custom field.
 - (optional) `default`: Default value for the custom field.
 - (optional) `placeholder`: Small text inside the field.
-- (optional) `position`: Position in the editor, supported values (`top`, `bottom`).
+- (optional) `position`: Position in the editor, supported values (`top`, `bottom`). If the position option is not used, the Custom field appears on the `Options` `Custom` tab.
 
 ## Add custom fields
 To add custom fields go to:
@@ -112,4 +112,13 @@ To delete a custom field you just need to remove the entry from the JSON structu
 If you want to remove all custom fields, just set an empty JSON in the textarea, as following:
 ```
 {}
+```
+
+## Get Custom Fields array options
+To get the options for a custom field, pass in true as a second parameter, to return an array of the field options, eg `Label`.
+```
+<?php
+$options = $page->custom('test', true);
+echo $options['label'];
+?>
 ```
